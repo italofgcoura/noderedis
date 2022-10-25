@@ -78,6 +78,10 @@ app.get("/", async (req, res) => {
   }
 });
 
+app.get("*", (req, res) => {
+  res.send({ status: 404, error: "Endpoint not found" });
+});
+
 app.listen(8080, () => {
   console.log("Listening app on port 8080");
 });
